@@ -1,8 +1,8 @@
 // import { Column } from "react-table";
-// import AdminSidebar from "../components/AdminSidebar";
 import { ReactElement, useState, useCallback } from "react";
 // import TableHOC from "../components/TableHOC";
 import { Link } from "react-router-dom";
+import AdminSidebar from "../components/AdminSidebar";
 
 interface DataType {
   user: string;
@@ -83,7 +83,7 @@ const Transaction = () => {
 
   return (
     <div className="admin-container">
-      {/* <AdminSidebar /> */}
+      <AdminSidebar />
       {/* <main>{Table()}</main> */}
     </div>
   );

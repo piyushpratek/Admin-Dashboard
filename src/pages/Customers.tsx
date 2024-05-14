@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-// import AdminSidebar from "../components/AdminSidebar";
 // import { Column } from "react-table";
 import { useState, useCallback } from "react";
 // import TableHOC from "../components/TableHOC";
 import { FaTrash } from "react-icons/fa";
+import AdminSidebar from "../components/AdminSidebar";
 
 interface DataType {
   avatar: ReactElement;
@@ -103,7 +103,7 @@ const Customers = () => {
 
   return (
     <div className="admin-container">
-      {/* <AdminSidebar /> */}
+      <AdminSidebar />
       {/* <main>{Table()}</main> */}
     </div>
   );
