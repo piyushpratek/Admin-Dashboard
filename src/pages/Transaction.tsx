@@ -1,8 +1,8 @@
-// import { Column } from "react-table";
 import { ReactElement, useState, useCallback } from "react";
-// import TableHOC from "../components/TableHOC";
 import { Link } from "react-router-dom";
 import AdminSidebar from "../components/AdminSidebar";
+import { Column } from "react-table";
+import TableHOC from "../components/TableHOC";
 
 interface DataType {
   user: string;
@@ -13,36 +13,36 @@ interface DataType {
   action: ReactElement;
 }
 
-// const columns: Column<DataType>[] = [
-//   {
-//     Header: "Avatar",
-//     accessor: "user",
-//   },
-//   {
-//     Header: "Amount",
-//     accessor: "amount",
-//   },
-//   {
-//     Header: "Discount",
-//     accessor: "discount",
-//   },
-//   {
-//     Header: "Quantity",
-//     accessor: "quantity",
-//   },
-//   {
-//     Header: "Status",
-//     accessor: "status",
-//   },
-//   {
-//     Header: "Action",
-//     accessor: "action",
-//   },
-// ];
+const columns: Column<DataType>[] = [
+  {
+    Header: "Avatar",
+    accessor: "user",
+  },
+  {
+    Header: "Amount",
+    accessor: "amount",
+  },
+  {
+    Header: "Discount",
+    accessor: "discount",
+  },
+  {
+    Header: "Quantity",
+    accessor: "quantity",
+  },
+  {
+    Header: "Status",
+    accessor: "status",
+  },
+  {
+    Header: "Action",
+    accessor: "action",
+  },
+];
 
 const arr: DataType[] = [
   {
-    user: "Charas",
+    user: "Charles",
     amount: 4500,
     discount: 400,
     quantity: 3,
@@ -50,17 +50,17 @@ const arr: DataType[] = [
     action: <Link to="/admin/transaction/sajknaskd">Manage</Link>,
   },
   {
-    user: "Xavirors",
+    user: "Xavier",
     amount: 6999,
-    discount: 400,
+    discount: 4500,
     status: <span className="green">Shipped</span>,
-    quantity: 6,
+    quantity: 5,
     action: <Link to="/admin/transaction/sajknaskd">Manage</Link>,
   },
   {
-    user: "Xavirors",
+    user: "Jack",
     amount: 6999,
-    discount: 400,
+    discount: 4000,
     status: <span className="purple">Delivered</span>,
     quantity: 6,
     action: <Link to="/admin/transaction/sajknaskd">Manage</Link>,
@@ -70,21 +70,21 @@ const arr: DataType[] = [
 const Transaction = () => {
   const [data] = useState<DataType[]>(arr);
 
-  // const Table = useCallback(
-  //   TableHOC<DataType>(
-  //     columns,
-  //     data,
-  //     "dashboard-product-box",
-  //     "Transactions",
-  //     true
-  //   ),
-  //   []
-  // );
+  const Table = useCallback(
+    TableHOC<DataType>(
+      columns,
+      data,
+      "dashboard-product-box",
+      "Transactions",
+      true
+    ),
+    []
+  );
 
   return (
     <div className="admin-container">
       <AdminSidebar />
-      {/* <main>{Table()}</main> */}
+      <main>{Table()}</main>
     </div>
   );
 };
