@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-// import { Column } from "react-table";
 import { useState, useCallback } from "react";
-// import TableHOC from "../components/TableHOC";
 import { FaTrash } from "react-icons/fa";
 import AdminSidebar from "../components/AdminSidebar";
+import { Column } from "react-table";
+import TableHOC from "../components/TableHOC";
 
 interface DataType {
   avatar: ReactElement;
@@ -14,32 +14,32 @@ interface DataType {
   action: ReactElement;
 }
 
-// const columns: Column<DataType>[] = [
-//   {
-//     Header: "Avatar",
-//     accessor: "avatar",
-//   },
-//   {
-//     Header: "Name",
-//     accessor: "name",
-//   },
-//   {
-//     Header: "Gender",
-//     accessor: "gender",
-//   },
-//   {
-//     Header: "Email",
-//     accessor: "email",
-//   },
-//   {
-//     Header: "Role",
-//     accessor: "role",
-//   },
-//   {
-//     Header: "Action",
-//     accessor: "action",
-//   },
-// ];
+const columns: Column<DataType>[] = [
+  {
+    Header: "Avatar",
+    accessor: "avatar",
+  },
+  {
+    Header: "Name",
+    accessor: "name",
+  },
+  {
+    Header: "Gender",
+    accessor: "gender",
+  },
+  {
+    Header: "Email",
+    accessor: "email",
+  },
+  {
+    Header: "Role",
+    accessor: "role",
+  },
+  {
+    Header: "Action",
+    accessor: "action",
+  },
+];
 const img = "https://randomuser.me/api/portraits/women/54.jpg";
 const img2 = "https://randomuser.me/api/portraits/women/50.jpg";
 
@@ -75,7 +75,7 @@ const arr: DataType[] = [
         alt="Shoes"
       />
     ),
-    name: "May Scoot",
+    name: "May Scot",
     email: "aunt.may@example.com",
     gender: "female",
     role: "user",
@@ -90,21 +90,21 @@ const arr: DataType[] = [
 const Customers = () => {
   const [data] = useState<DataType[]>(arr);
 
-  // const Table = useCallback(
-  //   TableHOC<DataType>(
-  //     columns,
-  //     data,
-  //     "dashboard-product-box",
-  //     "Customers",
-  //     true
-  //   ),
-  //   []
-  // );
+  const Table = useCallback(
+    TableHOC<DataType>(
+      columns,
+      data,
+      "dashboard-product-box",
+      "Customers",
+      true
+    ),
+    []
+  );
 
   return (
     <div className="admin-container">
       <AdminSidebar />
-      {/* <main>{Table()}</main> */}
+      <main>{Table()}</main>
     </div>
   );
 };
