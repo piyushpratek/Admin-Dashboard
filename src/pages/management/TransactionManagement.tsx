@@ -18,12 +18,12 @@ const orderItems: OrderItemType[] = [
 
 const TransactionManagement = () => {
   const [order, setOrder] = useState<OrderType>({
-    name: "Abhishek Singh",
-    address: "77 Black Street",
-    city: "Neyword",
-    state: "Nevada",
+    name: "Piyush Prateek",
+    address: "77 house number",
+    city: "Delhi",
+    state: "Delhi",
     country: "India",
-    pinCode: 2434341,
+    pinCode: 800001,
     status: "Processing",
     subtotal: 4000,
     discount: 1200,
@@ -49,7 +49,7 @@ const TransactionManagement = () => {
     status,
   } = order;
 
-  const updateHander = () => {
+  const updateHandler = () => {
     setOrder((prev) => ({
       ...prev,
       status: prev.status === "Processing" ? "Shipped" : "Delivered",
@@ -101,15 +101,15 @@ const TransactionManagement = () => {
                 status === "Delivered"
                   ? "purple"
                   : status === "Shipped"
-                  ? "green"
-                  : "red"
+                    ? "green"
+                    : "red"
               }
             >
               {status}
             </span>
           </p>
 
-          <button onClick={updateHander}>Process Status</button>
+          <button onClick={updateHandler}>Process Status</button>
         </article>
       </main>
     </div>
