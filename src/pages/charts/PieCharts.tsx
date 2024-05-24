@@ -52,6 +52,7 @@ const PieCharts = () => {
           </div>
           <h2>Stock Availability</h2>
         </section>
+
         <section>
           <div>
             <DoughnutChart

@@ -72,6 +72,7 @@ const BarCharts = () => {
           />
           <h2>Discount Allotted</h2>
         </section>
+
       </main>
     </div>
   );
